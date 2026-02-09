@@ -1,0 +1,57 @@
+Youshu:
+  data_path: './datasets'
+  batch_size_train: 2048 # the batch size for training
+  batch_size_test: 2048 # the batch size for testing
+  topk: [10, 20, 40, 80] # the topks metrics for evaluation
+  neg_num: 10 # number of negatives used for BPR loss. All the experiments use 1.
+  test_interval: 1 # by how many epochs to run the validation and testing.
+  BL_BALF_lambda: 5.0e-9 # the lambda for BALF term.
+  IL_BALF_lambda: 5.0e-9 # the lambda for BALF term.
+
+  use_pda: True
+  propensity_power: 0.05
+  max_propensity: 20
+
+NetEase:
+  data_path: './datasets'
+  batch_size_train: 2048
+  batch_size_test: 2048
+  topk: [10, 20, 40, 80]
+  neg_num: 1
+  test_interval: 5
+  BL_BALF_lambda: 5.0e-9
+  IL_BALF_lambda: 5.0e-9
+
+  use_pda: True
+  propensity_power: 0.6
+  max_propensity: 20
+
+iFashion:
+  data_path: './datasets'
+  batch_size_train: 2048
+  batch_size_test: 2048
+  topk: [10, 20, 40, 80]
+  neg_num: 1
+  test_interval: 2
+  BL_BALF_lambda: 5.0e-9
+  IL_BALF_lambda: 5.0e-9
+
+  use_pda: True 
+  propensity_power: 0.6
+  max_propensity: 20
+
+Meal:
+  data_path: './datasets'
+  batch_size_train: 2048 # the batch size for training
+  batch_size_test: 2048 # the batch size for testing
+  topk: [5, 10, 20, 40, 80] # the topks metrics for evaluation
+  neg_num: 1 # number of negatives used for BPR loss. All the experiments use 1.
+  test_interval: 5 # by how many epochs to run the validation and testing.
+  BL_BALF_lambda: 1.0e-9  
+  IL_BALF_lambda: 5.0e-10 
+  use_pda: True
+  propensity_power: 0.1
+  max_propensity: 40.0
+
+BundleGT:
+  embedding_size: 64
