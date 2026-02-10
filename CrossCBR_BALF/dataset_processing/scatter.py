@@ -71,31 +71,31 @@ def visualization(train_data, test_data, ax, type, ref_ax=None):
 # 主函数
 def main():
     # 读取IID数据
-    iid_train_data = load_data('../datasets/Meal/user_bundle_train.txt')
-    iid_test_data = load_data('../datasets/Meal/user_bundle_test.txt')
-    iid_tune_data = load_data('../datasets/Meal/user_bundle_tune.txt')
+    iid_train_data = load_data('../datasets/Youshu_IID/user_bundle_train.txt')
+    iid_test_data = load_data('../datasets/Youshu_IID/user_bundle_test.txt')
+    iid_tune_data = load_data('../datasets/Youshu_IID/user_bundle_tune.txt')
 
     # 创建图形，设置为1行2列的子图
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
 
     # 可视化IID数据
-    visualization(iid_train_data, iid_test_data, ax1, 'Meal_IID')
+    visualization(iid_train_data, iid_test_data, ax1, 'Youshu_IID')
 
     # 读取OOD数据
-    ood_train_data = load_data('../datasets/Meal_OOD/user_bundle_train.txt')
-    ood_tune_data = load_data('../datasets/Meal_OOD/user_bundle_tune.txt')
-    ood_test_data = load_data('../datasets/Meal_OOD/user_bundle_test.txt')
+    ood_train_data = load_data('../datasets/Youshu/user_bundle_train.txt')
+    ood_tune_data = load_data('../datasets/Youshu/user_bundle_tune.txt')
+    ood_test_data = load_data('../datasets/Youshu/user_bundle_test.txt')
 
     # 可视化OOD数据并同步坐标轴
-    visualization(ood_train_data, ood_test_data, ax2, 'Meal_OOD', ref_ax=ax1)
+    visualization(ood_train_data, ood_test_data, ax2, 'Youshu_OOD', ref_ax=ax1)
 
     # 调整子图之间的间距
     plt.tight_layout()
 
     # 保存图片
-    plt.savefig('Meal_bundle_popularity_scatter_IID_vs_OOD_Train_Test.png')
+    plt.savefig('Youshu_bundle_popularity_scatter_IID_vs_OOD_Train_Test.png')
 
-    print('Picture saved as Meal_bundle_popularity_scatter_IID_vs_OOD_Train_Test.png')
+    print('Picture saved as Youshu_bundle_popularity_scatter_IID_vs_OOD_Train_Test.png')
 
 
 if __name__ == "__main__":
