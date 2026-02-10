@@ -11,9 +11,9 @@ def load_data(file_path):
     return interactions
 
 # 读取数据
-train_data = load_data('../datasets/Meal/user_bundle_train.txt')
-tune_data = load_data('../datasets/Meal/user_bundle_tune.txt')
-test_data = load_data('../datasets/Meal/user_bundle_test.txt')
+train_data = load_data('../datasets/Youshu_IID/user_bundle_train.txt')
+tune_data = load_data('../datasets/Youshu_IID/user_bundle_tune.txt')
+test_data = load_data('../datasets/Youshu_IID/user_bundle_test.txt')
 
 all_data = train_data + tune_data + test_data
 
@@ -89,8 +89,9 @@ def save_data(file_name, data):
         for user_id, bundle_id in data:
             f.write(f"{user_id}\t{bundle_id}\n")
 
-save_data('../datasets/Meal_OOD/user_bundle_train.txt', train_data_final)
-save_data('../datasets/Meal_OOD/user_bundle_tune.txt', tune_data_final)
-save_data('../datasets/Meal_OOD/user_bundle_test.txt', test_data_final)
+# OOD 数据集
+save_data('../datasets/Youshu/user_bundle_train.txt', train_data_final)
+save_data('../datasets/Youshu/user_bundle_tune.txt', tune_data_final)
+save_data('../datasets/Youshu/user_bundle_test.txt', test_data_final)
 
 print("Completed dataset splitting!")
